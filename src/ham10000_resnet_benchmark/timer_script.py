@@ -9,7 +9,7 @@ import os
 import time
 
 # --- 設定項目 ---
-DATA_DIR = '/home/is/akihiro-i/datasets'  # データセットのパスに変更してください
+DATA_DIR = '/home/is/akihiro-i/datasets/ham10000'  # データセットのパスに変更してください
 IMAGE_DIR_PART1 = os.path.join(DATA_DIR, 'HAM10000_images_part_1')
 IMAGE_DIR_PART2 = os.path.join(DATA_DIR, 'HAM10000_images_part_2')
 METADATA_FILE = os.path.join(DATA_DIR, 'HAM10000_metadata.csv')
@@ -96,7 +96,8 @@ train_loader = DataLoader(full_dataset, batch_size=BATCH_SIZE, shuffle=True, num
 num_classes = full_dataset.num_classes
 
 # --- 3. モデルの準備 ---
-model = models.resnet101(weights=models.ResNet101_Weights.IMAGENET1K_V1) # または weights=None で未学習モデル
+# model = models.resnet101(weights=models.ResNet101_Weights.IMAGENET1K_V1) # または weights=None で未学習モデル
+model = models.resnet101(weights=None) # 未学習のResNet101を使用
 # ResNetの最終層をHAM10000のクラス数に合わせて変更
 num_ftrs = model.fc.in_features
 model.fc = nn.Linear(num_ftrs, num_classes)
