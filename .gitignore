@@ -1,0 +1,27 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+*$py.class
+
+# Rye
+.venv/
+.rye/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (もしデータセットをリポジトリに含めない場合)
+# /path/to/your/dataset/ # 実際のパスに変更
