@@ -23,5 +23,4 @@ build/
 *.swp
 *.swo
 
-# Data (もしデータセットをリポジトリに含めない場合)
-# /path/to/your/dataset/ # 実際のパスに変更
+*.code-workspace
